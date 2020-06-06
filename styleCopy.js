@@ -1,29 +1,14 @@
-import { StyleSheet } from "react-native";
-
-export default StyleSheet.create({
-  container: {
+container: {
     flex: 1,
     backgroundColor: "#F2F2F2",
-    //alignItems: 'center',
+    alignItems: 'center',
     justifyContent: "space-between",
     flexDirection: "column"
   },
   logoShapeContainer: {
     flexDirection: "row",
-    justifyContent: 'flex-end'
-  },
-  logo: {
-    marginTop: '7%',
-    marginRight: 60,
-    //alignSelf: 'flex-end'
-  },
-  image: {
-    alignSelf: 'center'
-  },
-  shape: {
-    marginBottom: '6%',
-    alignSelf: 'flex-end',
-    
+    alignSelf: 'flex-start',
+    justifyContent: "space-around",
   },
 
   copyright: {
@@ -33,6 +18,7 @@ export default StyleSheet.create({
     textAlign: "center",
     color: "#380628"
   },
+
   basetext: {
     fontFamily: "Poppins",
     fontSize: 14,
@@ -62,13 +48,14 @@ export default StyleSheet.create({
     color: "#380628"
   },
 
+  image: {
+    marginTop: "50%"
+  },
   gradientButton: {
     paddingVertical: 15,
     paddingHorizontal: 75,
     alignItems: "center",
-    borderRadius: 5, 
-    marginHorizontal: '11.11%',
-    marginTop: 25
+    borderRadius: 5
   },
   gradientButtonText: {
     fontSize: 17,
@@ -91,5 +78,3 @@ export default StyleSheet.create({
   checkbox: {
     alignSelf: "center"
   },
-
-});

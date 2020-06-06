@@ -16,7 +16,13 @@ export default function IntroScreen({ navigation }) {
   } else {
     return (
       <View style={style.container}>
-        <Image style={style.image} source={require("./assets/image1.png")} />
+          <View style={style.logoShapeContainer}>
+          <Image style={style.logo} source={require("./assets/Logo.png")} />
+          <Image style={style.shape} source={require("./assets/AbstractShape.png")} />
+        </View>
+        <Image style={style.image} source={require("./assets/OnboardingImg.png")} />
+
+        <View>
         <Text style={style.basetext}>
           Connect with your business partners and associates using the new
           platform
@@ -34,6 +40,7 @@ export default function IntroScreen({ navigation }) {
             </Text>
           </LinearGradient>
         </TouchableOpacity>
+        </View>
         <Text style={style.copyright}>copyright © meetup.</Text>
       </View>
     );

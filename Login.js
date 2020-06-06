@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, TouchableOpacity, TextInput } from "react-native";
+import { Text, View, TouchableOpacity, TextInput, Image } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { AppLoading } from "expo";
 import { useFonts } from "@use-expo/font";
@@ -17,6 +17,11 @@ export default function LoginScreen({ navigation }) {
   } else {
     return (
       <View style={style.container}>
+        <View style={style.logoShapeContainer}>
+          <Image style={style.logo} source={require("./assets/Logo.png")} />
+          <Image style={style.shape} source={require("./assets/AbstractShape.png")} />
+        </View>
+
         <View>
           <Text style={style.titlePage}>Hello!</Text>
           <Text style={style.basetext}>

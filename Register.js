@@ -4,7 +4,8 @@ import {
   View,
   TouchableOpacity,
   TextInput,
-  CheckBox
+  CheckBox,
+  Image
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { AppLoading } from "expo";
@@ -26,6 +27,10 @@ export default function RegisterScreen({ navigation }) {
   } else {
     return (
       <View style={style.container}>
+        <View style={style.logoShapeContainer}>
+          <Image style={style.logo} source={require("./assets/Logo.png")} />
+          <Image style={style.shape} source={require("./assets/AbstractShape.png")} />
+        </View>
         <Text style={style.titlePage}>Register</Text>
 
         <View>
