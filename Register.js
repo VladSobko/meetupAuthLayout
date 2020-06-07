@@ -31,23 +31,24 @@ export default function RegisterScreen({ navigation }) {
           <Image style={style.logo} source={require("./assets/Logo.png")} />
           <Image style={style.shape} source={require("./assets/AbstractShape.png")} />
         </View>
-        <Text style={style.titlePage}>Register</Text>
+        <Text style={{...style.titlePage, ...style.fieldTitle, ...style.intro}}>Register</Text>
 
-        <View>
-          <Text style={style.basetext}>Full Names</Text>
+        <View style={style.signUpForm}>
+          
+          <Text style={{...style.basetext, ...style.fieldTitle}}>Full Names</Text>
 
           <TextInput
             style={style.inputField}
             onChangeText={text => onChangeFullName(text)}
             value={fullName}
           />
-          <Text style={style.basetext}>Phone Number</Text>
+          <Text style={{...style.basetext, ...style.fieldTitle}}>Phone Number</Text>
           <TextInput
             style={style.inputField}
             onChangeText={text => onChangePhoneNumber(text)}
             value={phoneNumber}
           />
-          <Text style={style.basetext}>Pin</Text>
+          <Text style={{...style.basetext, ...style.fieldTitle}}>Pin</Text>
           <TextInput
             style={style.inputField}
             onChangeText={text => onChangePin(text)}
@@ -56,7 +57,7 @@ export default function RegisterScreen({ navigation }) {
             value={pin}
             secureTextEntry={true}
           />
-          <Text style={style.basetext}>Repeat Pin</Text>
+          <Text style={{...style.basetext, ...style.fieldTitle}}>Repeat Pin</Text>
           <TextInput
             style={style.inputField}
             onChangeText={text => onChangePinRepeat(text)}
@@ -72,7 +73,7 @@ export default function RegisterScreen({ navigation }) {
               onValueChange={setCheckBoxSelection}
               style={style.checkbox}
             />
-            <Text style={style.basetext}>
+            <Text style={{...style.basetext, ...style.checkboxText}}>
               I agree to the terms & conditions
             </Text>
           </View>
@@ -80,7 +81,7 @@ export default function RegisterScreen({ navigation }) {
           <TouchableOpacity>
             <LinearGradient
               colors={["#E73361", "#9A1675"]}
-              style={style.gradientButton}
+              style={{...style.gradientButton, ...style.authButton}}
             >
               <Text style={style.gradientButtonText}>Register</Text>
             </LinearGradient>
@@ -89,7 +90,7 @@ export default function RegisterScreen({ navigation }) {
         <Text style={style.copyright}>
           Already have an account?{" "}
           <Text
-            style={style.navLink}
+            style={{...style.navLink, ...style.navLinkReg}}
             onPress={() => {
               navigation.navigate("Login");
             }}

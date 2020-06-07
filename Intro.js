@@ -23,7 +23,7 @@ export default function IntroScreen({ navigation }) {
         <Image style={style.image} source={require("./assets/OnboardingImg.png")} />
 
         <View>
-        <Text style={style.basetext}>
+        <Text style={{...style.basetext, ...style.introText}}>
           Connect with your business partners and associates using the new
           platform
         </Text>

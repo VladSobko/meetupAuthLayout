@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Text, View, TouchableOpacity, TextInput, Image } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { AppLoading } from "expo";
@@ -6,8 +6,8 @@ import { useFonts } from "@use-expo/font";
 import style from "./style";
 
 export default function LoginScreen({ navigation }) {
-  const [phoneNumber, onChangePhoneNumber] = React.useState("");
-  const [pin, onChangePin] = React.useState("");
+  const [phoneNumber, onChangePhoneNumber] = useState("");
+  const [pin, onChangePin] = useState("");
 
   let [fontsLoaded] = useFonts({
     Poppins: require("./assets/fonts/Poppins.ttf")
@@ -22,20 +22,20 @@ export default function LoginScreen({ navigation }) {
           <Image style={style.shape} source={require("./assets/AbstractShape.png")} />
         </View>
 
-        <View>
-          <Text style={style.titlePage}>Hello!</Text>
-          <Text style={style.basetext}>
+        <View >
+          <Text style={{...style.titlePage, ...style.fieldTitle, ...style.intro}}>Hello!</Text>
+          <Text style={{...style.basetext, ...style.fieldTitle, ...style.loginIntroText}}>
             please enter your details to sign in
           </Text>
         </View>
-        <View>
-          <Text style={style.basetext}>Phone Number</Text>
+        <View style={style.signInForm}>
+          <Text style={{...style.basetext, ...style.fieldTitle}}>Phone Number</Text>
           <TextInput
             style={style.inputField}
             onChangeText={text => onChangePhoneNumber(text)}
             value={phoneNumber}
           />
-          <Text style={style.basetext}>Pin</Text>
+          <Text style={{...style.basetext, ...style.fieldTitle}}>Pin</Text>
           <TextInput
             style={style.inputField}
             onChangeText={text => onChangePin(text)}
@@ -47,16 +47,16 @@ export default function LoginScreen({ navigation }) {
           <TouchableOpacity>
             <LinearGradient
               colors={["#E73361", "#9A1675"]}
-              style={style.gradientButton}
+              style={{...style.gradientButton, ...style.authButton}}
             >
               <Text style={style.gradientButtonText}>Sign In</Text>
             </LinearGradient>
           </TouchableOpacity>
 
-          <Text>
-            Don’t have an account?{" "}
+          <Text style={style.basetext}>
+            Don’t have an account? {""}
             <Text
-              style={style.navLink}
+              style={{...style.basetext,...style.navLink }}
               onPress={() => {
                 navigation.navigate("Register");
               }}
