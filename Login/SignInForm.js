@@ -38,11 +38,14 @@ export function SignInForm({ navigation }) {
           Pin
         </Text>
         <Text
-          style={[{
-            ...style.basetext,
-            ...style.fieldTitle,
-            ...style.invalidLabelPin
-          }, {opacity: pinError ? 100 : 0}]}
+          style={[
+            {
+              ...style.basetext,
+              ...style.fieldTitle,
+              ...style.invalidLabelPin
+            },
+            { opacity: pinError ? 100 : 0 }
+          ]}
         >
           wrong pin. Please try again
         </Text>

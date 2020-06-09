@@ -1,16 +1,12 @@
 import React from "react";
-import {
-  Text,
-  View,
-} from "react-native";
+import { Text, View } from "react-native";
 import { AppLoading } from "expo";
 import { useFonts } from "@use-expo/font";
 import style from "../style";
 import { Header } from "../Header";
-import {SignUpForm} from './SignUpForm'
+import { SignUpForm } from "./SignUpForm";
 
 export default function RegisterScreen({ navigation }) {
-
   let [fontsLoaded] = useFonts({
     Poppins: require("../assets/fonts/Poppins.ttf")
   });

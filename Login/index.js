@@ -8,9 +8,7 @@ import { Footer } from "../Footer";
 import { Introduction } from "./Introduction";
 import { SignInForm } from "./SignInForm";
 
-
-export default function LoginScreen({navigation}) {
-
+export default function LoginScreen({ navigation }) {
   let [fontsLoaded] = useFonts({
     Poppins: require("../assets/fonts/Poppins.ttf")
   });
@@ -24,8 +22,8 @@ export default function LoginScreen({navigation}) {
 
         <Introduction />
 
-        <SignInForm navigation={navigation}/>
-        
+        <SignInForm navigation={navigation} />
+
         <Footer />
       </View>
     );

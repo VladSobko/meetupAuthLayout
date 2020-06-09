@@ -53,7 +53,10 @@ export function SignUpForm() {
         secureTextEntry={hidePin}
       />
       <TouchableOpacity
-        style={{...style.visibilityHidePinLogin, ...style.visibilityHidePinRegister}}
+        style={{
+          ...style.visibilityHidePinLogin,
+          ...style.visibilityHidePinRegister
+        }}
         onPress={managePinVisibility}
       >
         <Image
@@ -74,7 +77,10 @@ export function SignUpForm() {
         secureTextEntry={true}
       />
       <TouchableOpacity
-        style={{...style.visibilityHidePinLogin, ...style.visibilityHidePinRepeatRegister}}
+        style={{
+          ...style.visibilityHidePinLogin,
+          ...style.visibilityHidePinRepeatRegister
+        }}
         onPress={manageRepeatPinVisibility}
       >
         <Image

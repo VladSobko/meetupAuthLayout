@@ -44,7 +44,7 @@ export default function IntroScreen({ navigation }) {
             </LinearGradient>
           </TouchableOpacity>
         </View>
-        <Footer/>
+        <Footer />
       </View>
     );
   }

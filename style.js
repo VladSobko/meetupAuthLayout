@@ -12,7 +12,7 @@ export default StyleSheet.create({
     justifyContent: "flex-end"
   },
   logo: {
-    marginTop: '21%',
+    marginTop: "21%",
     marginRight: 60
   },
   image: {
@@ -49,12 +49,12 @@ export default StyleSheet.create({
     color: "#380628"
   },
   invalidField: {
-    borderColor: "#FF3939",
+    borderColor: "#FF3939"
   },
   invalidLabelPin: {
-    color: "#FF3939",
+    color: "#FF3939"
   },
-  
+
   titlePage: {
     fontFamily: "Poppins",
     fontWeight: "bold",
@@ -90,13 +90,12 @@ export default StyleSheet.create({
     alignSelf: "flex-end"
   },
   navLinkReg: {
-    fontSize: 12,
+    fontSize: 12
   },
 
   checkboxContainer: {
     flexDirection: "row",
-    marginBottom: 20,
-    
+    marginBottom: 20
   },
   checkbox: {
     alignSelf: "center"
@@ -110,12 +109,11 @@ export default StyleSheet.create({
   },
   signUpForm: {
     marginLeft: "10.6%",
-    marginRight: "6.1%",
+    marginRight: "6.1%"
   },
   fieldTitle: {
     alignSelf: "flex-start",
     marginTop: 15
-
   },
   intro: {
     marginLeft: "10%"
@@ -127,27 +125,23 @@ export default StyleSheet.create({
 
   loginIntroText: {
     marginTop: 39,
-    marginLeft:'10%',
-    flexWrap: 'wrap',
-    marginRight: '58.5%'
-    
+    marginLeft: "10%",
+    flexWrap: "wrap",
+    marginRight: "58.5%"
   },
   bottomText: {
     marginTop: 15
   },
-  visibilityHidePinLogin:
-  {
-    position: 'absolute',
+  visibilityHidePinLogin: {
+    position: "absolute",
     right: 0,
     width: 35,
     top: 137
   },
-  visibilityHidePinRegister:
-  {
+  visibilityHidePinRegister: {
     top: 220
   },
-  visibilityHidePinRepeatRegister:
-  {
+  visibilityHidePinRepeatRegister: {
     top: 300
-  },
+  }
 });
