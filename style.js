@@ -48,6 +48,13 @@ export default StyleSheet.create({
     lineHeight: 24,
     color: "#380628"
   },
+  invalidField: {
+    borderColor: "#FF3939",
+  },
+  invalidLabelPin: {
+    color: "#FF3939",
+  },
+  
   titlePage: {
     fontFamily: "Poppins",
     fontWeight: "bold",
@@ -106,7 +113,9 @@ export default StyleSheet.create({
     marginRight: "6.1%",
   },
   fieldTitle: {
-    alignSelf: "flex-start"
+    alignSelf: "flex-start",
+    marginTop: 15
+
   },
   intro: {
     marginLeft: "10%"
@@ -125,5 +134,16 @@ export default StyleSheet.create({
   },
   bottomText: {
     marginTop: 15
-  }
+  },
+  visibilityHidePinLogin:
+  {
+    position: 'absolute',
+    right: 0,
+    width: 35,
+    top: 137
+  },
+  visibilityHidePinRegister:
+  {
+   
+  },
 });

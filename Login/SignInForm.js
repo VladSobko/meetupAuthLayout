@@ -1,12 +1,18 @@
 import React, { useState } from "react";
-import { Text, View, TouchableOpacity, TextInput } from "react-native";
+import { Text, View, TouchableOpacity, TextInput, Image } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import style from "../style";
 
 export function SignInForm({ navigation }) {
   const [phoneNumber, onChangePhoneNumber] = useState("");
   const [pin, onChangePin] = useState("");
-  //const [pinVisible, onChangePinVisible] = useState("");
+  const [hidePin, onChangeHidePin] = useState(true);
+  const [pinError, onSetPinError] = useState(true);
+
+  managePinVisibility = () => {
+    hidePin ? onChangeHidePin(false) : onChangeHidePin(true);
+  };
+
   return (
     <View style={style.signInForm}>
       <Text style={{ ...style.basetext, ...style.fieldTitle }}>
@@ -17,13 +23,53 @@ export function SignInForm({ navigation }) {
         onChangeText={text => onChangePhoneNumber(text)}
         value={phoneNumber}
       />
-      <Text style={{ ...style.basetext, ...style.fieldTitle }}>Pin</Text>
+      <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+        <Text
+          style={
+            pinError
+              ? {
+                  ...style.basetext,
+                  ...style.fieldTitle,
+                  ...style.invalidLabelPin
+                }
+              : { ...style.basetext, ...style.fieldTitle }
+          }
+        >
+          Pin
+        </Text>
+        <Text
+          style={[{
+            ...style.basetext,
+            ...style.fieldTitle,
+            ...style.invalidLabelPin
+          }, {opacity: pinError ? 100 : 0}]}
+        >
+          wrong pin. Please try again
+        </Text>
+      </View>
       <TextInput
-        style={style.inputField}
+        style={
+          pinError
+            ? { ...style.inputField, ...style.invalidField }
+            : style.inputField
+        }
         onChangeText={text => onChangePin(text)}
         value={pin}
-        secureTextEntry={true}
+        secureTextEntry={hidePin}
       />
+
+      <TouchableOpacity
+        style={style.visibilityHidePinLogin}
+        onPress={managePinVisibility}
+      >
+        <Image
+          source={
+            hidePin
+              ? require("../assets/show-password.png")
+              : require("../assets/hide-password.png")
+          }
+        />
+      </TouchableOpacity>
 
       <Text style={style.navLink}>forgot your pin?</Text>
 

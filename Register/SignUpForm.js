@@ -4,7 +4,8 @@ import {
   View,
   TouchableOpacity,
   TextInput,
-  CheckBox
+  CheckBox,
+  Image
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import style from "../style";
@@ -15,10 +16,20 @@ export function SignUpForm() {
   const [pin, onChangePin] = useState("");
   const [pinRepeat, onChangePinRepeat] = useState("");
   const [isCheckBoxSelected, setCheckBoxSelection] = useState(false);
+  const [hidePin, onChangeHidePin] = useState(true);
+  //const [hidePinRepeat, onChangeHidePinRepeat] = useState(true);
+
+  managePinVisibility = () => {
+    hidePin ? onChangeHidePin(false) : onChangeHidePin(true);
+  };
+  // managePinRepeatVisibility = () => {
+  //   hidePinRepeat ? onChangeHidePinRepeat(false) : onChangeHidePinRepeat(true);
+  // };
 
   return (
     <View style={style.signUpForm}>
       <Text style={{ ...style.basetext, ...style.fieldTitle }}>Full Names</Text>
+      
 
       <TextInput
         style={style.inputField}
@@ -40,8 +51,21 @@ export function SignUpForm() {
         typePassword={true}
         autoCapitalize="none"
         value={pin}
-        secureTextEntry={true}
+        secureTextEntry={hidePin}
       />
+      <TouchableOpacity
+        style={style.visibilityHidePinRegister}
+        onPress={managePinVisibility}
+      >
+        <Image
+          source={
+            hidePin
+              ? require("../assets/show-password.png")
+              : require("../assets/hide-password.png")
+          }
+
+        />
+      </TouchableOpacity>
       <Text style={{ ...style.basetext, ...style.fieldTitle }}>Repeat Pin</Text>
       <TextInput
         style={style.inputField}
@@ -51,6 +75,19 @@ export function SignUpForm() {
         value={pinRepeat}
         secureTextEntry={true}
       />
+      <TouchableOpacity
+        style={style.visibilityHidePinRegister}
+        //onPress={managePinRepeatVisibility}
+      >
+        <Image
+          source={
+            // hidePinRepeat
+            //   ? require("../assets/show-password.png")
+            //   : 
+            require("../assets/hide-password.png")
+          }
+        />
+      </TouchableOpacity>
 
       <View style={style.checkboxContainer}>
         <CheckBox
