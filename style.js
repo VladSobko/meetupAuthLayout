@@ -144,6 +144,10 @@ export default StyleSheet.create({
   },
   visibilityHidePinRegister:
   {
-   
+    top: 220
+  },
+  visibilityHidePinRepeatRegister:
+  {
+    top: 300
   },
 });

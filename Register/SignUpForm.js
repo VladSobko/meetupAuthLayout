@@ -17,19 +17,18 @@ export function SignUpForm() {
   const [pinRepeat, onChangePinRepeat] = useState("");
   const [isCheckBoxSelected, setCheckBoxSelection] = useState(false);
   const [hidePin, onChangeHidePin] = useState(true);
-  //const [hidePinRepeat, onChangeHidePinRepeat] = useState(true);
+  const [hidePinRepeat, onChangeHidePinRepeat] = useState(true);
 
-  managePinVisibility = () => {
+  const managePinVisibility = () => {
     hidePin ? onChangeHidePin(false) : onChangeHidePin(true);
   };
-  // managePinRepeatVisibility = () => {
-  //   hidePinRepeat ? onChangeHidePinRepeat(false) : onChangeHidePinRepeat(true);
-  // };
+  const manageRepeatPinVisibility = () => {
+    hidePinRepeat ? onChangeHidePinRepeat(false) : onChangeHidePinRepeat(true);
+  };
 
   return (
     <View style={style.signUpForm}>
       <Text style={{ ...style.basetext, ...style.fieldTitle }}>Full Names</Text>
-      
 
       <TextInput
         style={style.inputField}
@@ -54,7 +53,7 @@ export function SignUpForm() {
         secureTextEntry={hidePin}
       />
       <TouchableOpacity
-        style={style.visibilityHidePinRegister}
+        style={{...style.visibilityHidePinLogin, ...style.visibilityHidePinRegister}}
         onPress={managePinVisibility}
       >
         <Image
@@ -63,7 +62,6 @@ export function SignUpForm() {
               ? require("../assets/show-password.png")
               : require("../assets/hide-password.png")
           }
-
         />
       </TouchableOpacity>
       <Text style={{ ...style.basetext, ...style.fieldTitle }}>Repeat Pin</Text>
@@ -76,15 +74,14 @@ export function SignUpForm() {
         secureTextEntry={true}
       />
       <TouchableOpacity
-        style={style.visibilityHidePinRegister}
-        //onPress={managePinRepeatVisibility}
+        style={{...style.visibilityHidePinLogin, ...style.visibilityHidePinRepeatRegister}}
+        onPress={manageRepeatPinVisibility}
       >
         <Image
           source={
-            // hidePinRepeat
-            //   ? require("../assets/show-password.png")
-            //   : 
-            require("../assets/hide-password.png")
+            hidePinRepeat
+              ? require("../assets/show-password.png")
+              : require("../assets/hide-password.png")
           }
         />
       </TouchableOpacity>
