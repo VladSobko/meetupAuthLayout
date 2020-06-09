@@ -12,15 +12,13 @@ export default StyleSheet.create({
     justifyContent: "flex-end"
   },
   logo: {
-    marginTop: "7%",
+    marginTop: '21%',
     marginRight: 60
-    //alignSelf: 'flex-end'
   },
   image: {
     alignSelf: "center"
   },
   shape: {
-    marginBottom: "6%",
     alignSelf: "flex-end"
   },
 
@@ -37,7 +35,6 @@ export default StyleSheet.create({
     lineHeight: 26,
     textAlign: "center",
     color: "#380628"
-    //marginHorizontal: 55
   },
 
   inputField: {
@@ -125,5 +122,8 @@ export default StyleSheet.create({
     flexWrap: 'wrap',
     marginRight: '58.5%'
     
+  },
+  bottomText: {
+    marginTop: 15
   }
 });
