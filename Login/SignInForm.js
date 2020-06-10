@@ -1,6 +1,12 @@
 import React, { useState } from "react";
-import { Text, View, TouchableOpacity, TextInput, Image } from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
+import {
+  Text,
+  View,
+  TouchableOpacity,
+  TextInput,
+  Image,
+  ImageBackground
+} from "react-native";
 import style from "../style";
 
 export function SignInForm({ navigation }) {
@@ -77,14 +83,12 @@ export function SignInForm({ navigation }) {
       <Text style={style.navLink}>forgot your pin?</Text>
 
       <TouchableOpacity>
-        <LinearGradient
-          colors={["#E73361", "#9A1675"]}
+        <ImageBackground
+          source={require("../assets/Rectangle.png")}
           style={{ ...style.gradientButton, ...style.authButton }}
-          start={[0, 1]}
-          end={[1, 0]}
         >
           <Text style={style.gradientButtonText}>Sign In</Text>
-        </LinearGradient>
+        </ImageBackground>
       </TouchableOpacity>
 
       <Text style={{ ...style.basetext, ...style.bottomText }}>

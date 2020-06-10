@@ -5,9 +5,9 @@ import {
   TouchableOpacity,
   TextInput,
   CheckBox,
-  Image
+  Image,
+  ImageBackground
 } from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
 import style from "../style";
 
 export function SignUpForm() {
@@ -104,14 +104,12 @@ export function SignUpForm() {
       </View>
 
       <TouchableOpacity>
-        <LinearGradient
-          colors={["#E73361", "#9A1675"]}
+      <ImageBackground
+          source={require("../assets/Rectangle.png")}
           style={{ ...style.gradientButton, ...style.authButton }}
-          start={[0, 1]}
-          end={[1, 0]}
         >
           <Text style={style.gradientButtonText}>Register</Text>
-        </LinearGradient>
+        </ImageBackground>
       </TouchableOpacity>
     </View>
   );

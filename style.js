@@ -65,12 +65,13 @@ export default StyleSheet.create({
   },
 
   gradientButton: {
+    overflow: 'hidden',
     paddingVertical: 15,
     paddingHorizontal: 75,
     alignItems: "center",
     borderRadius: 5,
     marginHorizontal: "11.11%",
-    marginTop: 25
+    marginTop: 25,
   },
   authButton: {
     marginHorizontal: 0

@@ -1,6 +1,5 @@
 import React from "react";
-import { Text, View, TouchableOpacity, Image } from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
+import { Text, View, TouchableOpacity, Image, ImageBackground } from "react-native";
 import { AppLoading } from "expo";
 import { useFonts } from "@use-expo/font";
 import style from "./style";
@@ -34,15 +33,15 @@ export default function IntroScreen({ navigation }) {
               navigation.navigate("Login");
             }}
           >
-            <LinearGradient
-              colors={["#E73361", "#9A1675"]}
+            <ImageBackground
+              source={require("./assets/Rectangle.png")}
               style={style.gradientButton}
-              start={[0, 1]}
-              end={[1, 0]}
             >
               <Text style={style.gradientButtonText}>Skip Introduction</Text>
-            </LinearGradient>
+            </ImageBackground>
           </TouchableOpacity>
+
+          
         </View>
         <Footer />
       </View>
