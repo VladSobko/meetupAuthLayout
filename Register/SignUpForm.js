@@ -5,10 +5,10 @@ import {
   TouchableOpacity,
   TextInput,
   CheckBox,
-  Image,
   ImageBackground
 } from "react-native";
 import style from "../style";
+import { IconEye } from "../IconEye";
 
 export function SignUpForm() {
   const [fullName, onChangeFullName] = useState("");
@@ -22,7 +22,7 @@ export function SignUpForm() {
   const managePinVisibility = () => {
     hidePin ? onChangeHidePin(false) : onChangeHidePin(true);
   };
-  const manageRepeatPinVisibility = () => {
+  const manageRepeatPinVisible = () => {
     hidePinRepeat ? onChangeHidePinRepeat(false) : onChangeHidePinRepeat(true);
   };
 
@@ -59,13 +59,7 @@ export function SignUpForm() {
         }}
         onPress={managePinVisibility}
       >
-        <Image
-          source={
-            hidePin
-              ? require("../assets/show-password.png")
-              : require("../assets/hide-password.png")
-          }
-        />
+        <IconEye hidePin={hidePin} />
       </TouchableOpacity>
       <Text style={{ ...style.basetext, ...style.fieldTitle }}>Repeat Pin</Text>
       <TextInput
@@ -77,19 +71,13 @@ export function SignUpForm() {
         secureTextEntry={true}
       />
       <TouchableOpacity
+        onPress={manageRepeatPinVisible}
         style={{
           ...style.visibilityHidePinLogin,
           ...style.visibilityHidePinRepeatRegister
         }}
-        onPress={manageRepeatPinVisibility}
       >
-        <Image
-          source={
-            hidePinRepeat
-              ? require("../assets/show-password.png")
-              : require("../assets/hide-password.png")
-          }
-        />
+        <IconEye hidePin={hidePinRepeat} />
       </TouchableOpacity>
 
       <View style={style.checkboxContainer}>
@@ -104,7 +92,7 @@ export function SignUpForm() {
       </View>
 
       <TouchableOpacity>
-      <ImageBackground
+        <ImageBackground
           source={require("../assets/Rectangle.png")}
           style={{ ...style.gradientButton, ...style.authButton }}
         >

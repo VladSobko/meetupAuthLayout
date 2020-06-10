@@ -4,10 +4,10 @@ import {
   View,
   TouchableOpacity,
   TextInput,
-  Image,
   ImageBackground
 } from "react-native";
 import style from "../style";
+import { IconEye } from "../IconEye";
 
 export function SignInForm({ navigation }) {
   const [phoneNumber, onChangePhoneNumber] = useState("");
@@ -71,13 +71,7 @@ export function SignInForm({ navigation }) {
         style={style.visibilityHidePinLogin}
         onPress={managePinVisibility}
       >
-        <Image
-          source={
-            hidePin
-              ? require("../assets/show-password.png")
-              : require("../assets/hide-password.png")
-          }
-        />
+        <IconEye hidePin={hidePin} />
       </TouchableOpacity>
 
       <Text style={style.navLink}>forgot your pin?</Text>
