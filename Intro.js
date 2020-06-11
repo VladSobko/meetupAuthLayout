@@ -3,8 +3,8 @@ import { Text, View, TouchableOpacity, Image, ImageBackground } from "react-nati
 import { AppLoading } from "expo";
 import { useFonts } from "@use-expo/font";
 import style from "./style";
-import { Header } from "./Header";
-import { Footer } from "./Footer";
+import { Header } from "./Components/Header";
+import { Footer } from "./Components/Footer";
 
 export default function IntroScreen({ navigation }) {
   let [fontsLoaded] = useFonts({

@@ -6,8 +6,8 @@ export function IconEye({ hidePin }) {
     <Image
       source={
         hidePin
-          ? require("./assets/show-password.png")
-          : require("./assets/hide-password.png")
+          ? require("../assets/show-password.png")
+          : require("../assets/hide-password.png")
       }
     />
   );

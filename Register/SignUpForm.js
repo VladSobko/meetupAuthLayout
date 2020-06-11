@@ -8,7 +8,9 @@ import {
   ImageBackground
 } from "react-native";
 import style from "../style";
-import { IconEye } from "../IconEye";
+import { IconEye } from "../Components/IconEye";
+import { FormField } from "../Components/FormField";
+import { FormPasswordField } from "../Components/FormPasswordField"
 
 export function SignUpForm() {
   const [fullName, onChangeFullName] = useState("");
@@ -28,30 +30,25 @@ export function SignUpForm() {
 
   return (
     <View style={style.signUpForm}>
-      <Text style={{ ...style.basetext, ...style.fieldTitle }}>Full Names</Text>
-
-      <TextInput
-        style={style.inputField}
-        onChangeText={text => onChangeFullName(text)}
+      <FormField
+        label="Full Names"
         value={fullName}
+        onChange={text => onChangeFullName(text)}
       />
-      <Text style={{ ...style.basetext, ...style.fieldTitle }}>
-        Phone Number
-      </Text>
-      <TextInput
-        style={style.inputField}
-        onChangeText={text => onChangePhoneNumber(text)}
+
+      <FormField
+        label="Phone Number"
         value={phoneNumber}
+        onChange={text => onChangePhoneNumber(text)}
       />
-      <Text style={{ ...style.basetext, ...style.fieldTitle }}>Pin</Text>
-      <TextInput
-        style={style.inputField}
-        onChangeText={text => onChangePin(text)}
-        typePassword={true}
-        autoCapitalize="none"
+
+      <FormPasswordField
+        label="Pin"
         value={pin}
+        onChange={text => onChangePin(text)}
         secureTextEntry={hidePin}
       />
+
       <TouchableOpacity
         style={{
           ...style.visibilityHidePinLogin,
@@ -61,14 +58,12 @@ export function SignUpForm() {
       >
         <IconEye hidePin={hidePin} />
       </TouchableOpacity>
-      <Text style={{ ...style.basetext, ...style.fieldTitle }}>Repeat Pin</Text>
-      <TextInput
-        style={style.inputField}
-        onChangeText={text => onChangePinRepeat(text)}
-        typePassword={true}
-        autoCapitalize="none"
+
+      <FormPasswordField
+        label="Repeat Pin"
         value={pinRepeat}
-        secureTextEntry={true}
+        onChange={text => onChangePinRepeat(text)}
+        secureTextEntry={hidePinRepeat}
       />
       <TouchableOpacity
         onPress={manageRepeatPinVisible}

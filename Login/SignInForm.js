@@ -7,7 +7,8 @@ import {
   ImageBackground
 } from "react-native";
 import style from "../style";
-import { IconEye } from "../IconEye";
+import { IconEye } from "../Components/IconEye";
+import { FormField } from "../Components/FormField";
 
 export function SignInForm({ navigation }) {
   const [phoneNumber, onChangePhoneNumber] = useState("");
@@ -21,14 +22,12 @@ export function SignInForm({ navigation }) {
 
   return (
     <View style={style.signInForm}>
-      <Text style={{ ...style.basetext, ...style.fieldTitle }}>
-        Phone Number
-      </Text>
-      <TextInput
-        style={style.inputField}
-        onChangeText={text => onChangePhoneNumber(text)}
+      <FormField
+        label="Phone Number"
         value={phoneNumber}
+        onChange={text => onChangePhoneNumber(text)}
       />
+
       <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
         <Text
           style={

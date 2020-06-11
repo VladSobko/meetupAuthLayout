@@ -3,7 +3,7 @@ import { Text, View } from "react-native";
 import { AppLoading } from "expo";
 import { useFonts } from "@use-expo/font";
 import style from "../style";
-import { Header } from "../Header";
+import { Header } from "../Components/Header";
 import { SignUpForm } from "./SignUpForm";
 
 export default function RegisterScreen({ navigation }) {
