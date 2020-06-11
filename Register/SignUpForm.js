@@ -3,7 +3,6 @@ import {
   Text,
   View,
   TouchableOpacity,
-  TextInput,
   CheckBox,
   ImageBackground
 } from "react-native";

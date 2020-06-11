@@ -46,7 +46,8 @@ export default StyleSheet.create({
     fontFamily: "Poppins",
     fontSize: 16,
     lineHeight: 24,
-    color: "#380628"
+    color: "#380628",
+    paddingLeft: '3.68%'
   },
   invalidField: {
     borderColor: "#FF3939"
@@ -98,7 +99,8 @@ export default StyleSheet.create({
     flexDirection: "row",
     marginBottom: 20,
     alignSelf: 'flex-start', 
-    marginLeft: '-2%'
+    marginLeft: '-2%',
+    marginTop: 12
   },
   checkboxText: {
     marginTop: 6
