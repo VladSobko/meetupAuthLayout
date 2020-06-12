@@ -1,14 +1,9 @@
 import React, { useState } from "react";
-import {
-  Text,
-  View,
-  TouchableOpacity,
-  TextInput,
-  ImageBackground
-} from "react-native";
+import { Text, View, TouchableOpacity, TextInput } from "react-native";
 import style from "../style";
 import { IconEye } from "../Components/IconEye";
 import { FormField } from "../Components/FormField";
+import { GradientButton } from "../Components/GradientButton";
 
 export function SignInForm({ navigation }) {
   const [phoneNumber, onChangePhoneNumber] = useState("");
@@ -75,14 +70,13 @@ export function SignInForm({ navigation }) {
 
       <Text style={style.navLink}>forgot your pin?</Text>
 
-      <TouchableOpacity>
-        <ImageBackground
-          source={require("../assets/Rectangle.png")}
-          style={{ ...style.gradientButton, ...style.authButton }}
-        >
-          <Text style={style.gradientButtonText}>Sign In</Text>
-        </ImageBackground>
-      </TouchableOpacity>
+      <GradientButton
+        onPress={() => {
+          navigation.navigate("Intro");
+        }}
+        title="Sign In"
+        source={require("../assets/Rectangle.png")}
+      />
 
       <Text style={{ ...style.basetext, ...style.bottomText }}>
         Don’t have an account? {""}

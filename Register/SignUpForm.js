@@ -4,12 +4,12 @@ import {
   View,
   TouchableOpacity,
   CheckBox,
-  ImageBackground
 } from "react-native";
 import style from "../style";
 import { IconEye } from "../Components/IconEye";
 import { FormField } from "../Components/FormField";
-import { FormPasswordField } from "../Components/FormPasswordField"
+import { FormPasswordField } from "../Components/FormPasswordField";
+import { GradientButton } from "../Components/GradientButton";
 
 export function SignUpForm() {
   const [fullName, onChangeFullName] = useState("");
@@ -85,14 +85,10 @@ export function SignUpForm() {
         </Text>
       </View>
 
-      <TouchableOpacity>
-        <ImageBackground
-          source={require("../assets/Rectangle.png")}
-          style={{ ...style.gradientButton, ...style.authButton }}
-        >
-          <Text style={style.gradientButtonText}>Register</Text>
-        </ImageBackground>
-      </TouchableOpacity>
+      <GradientButton
+        title="Register"
+        source={require("../assets/Rectangle.png")}
+      />
     </View>
   );
 }

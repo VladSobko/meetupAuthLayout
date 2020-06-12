@@ -1,10 +1,11 @@
 import React from "react";
-import { Text, View, TouchableOpacity, Image, ImageBackground } from "react-native";
+import { Text, View, Image } from "react-native";
 import { AppLoading } from "expo";
 import { useFonts } from "@use-expo/font";
 import style from "./style";
 import { Header } from "./Components/Header";
 import { Footer } from "./Components/Footer";
+import { GradientButton } from "./Components/GradientButton";
 
 export default function IntroScreen({ navigation }) {
   let [fontsLoaded] = useFonts({
@@ -27,21 +28,15 @@ export default function IntroScreen({ navigation }) {
             Connect with your business partners and associates using the new
             platform
           </Text>
-
-          <TouchableOpacity
-            onPress={() => {
-              navigation.navigate("Login");
-            }}
-          >
-            <ImageBackground
+          <View style={style.introButton}>
+            <GradientButton
+              onPress={() => {
+                navigation.navigate("Login");
+              }}
+              title="Skip Introduction"
               source={require("./assets/Rectangle.png")}
-              style={style.gradientButton}
-            >
-              <Text style={style.gradientButtonText}>Skip Introduction</Text>
-            </ImageBackground>
-          </TouchableOpacity>
-
-          
+            />
+          </View>
         </View>
         <Footer />
       </View>

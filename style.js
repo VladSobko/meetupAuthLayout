@@ -71,11 +71,11 @@ export default StyleSheet.create({
     paddingHorizontal: 75,
     alignItems: "center",
     borderRadius: 5,
-    marginHorizontal: "11.11%",
     marginTop: 25,
   },
-  authButton: {
-    marginHorizontal: 0
+
+  introButton: {
+    marginHorizontal: "11.11%"
   },
   gradientButtonText: {
     fontSize: 17,
